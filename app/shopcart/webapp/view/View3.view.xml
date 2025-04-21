@@ -1,0 +1,11 @@
+<mvc:View controllerName="shopcart.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page2" title="{i18n>title}">
+    <content>
+            <List id="productList" items="{dataModel>product}">
+                <StandardListItem id="_IDGenStandardListItem1" press="onprodpress" title="{dataModel>name}" description="{dataModel>price}" icon="{dataModel>image}" type="Active"/>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

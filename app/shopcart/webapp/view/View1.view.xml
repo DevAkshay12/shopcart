@@ -1,0 +1,19 @@
+<mvc:View controllerName="shopcart.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page" title="Product Catalog">
+        <content>
+            <Toolbar id="searchToolbar">
+                <SearchField id="searchField" liveChange="onSearch" width="100%" placeholder="Search categories..." />
+            </Toolbar>
+            <List id="l1" mode="None" items="{/Categories}" itemPress="item">
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <Title id="_IDGenTitle" text="Categories"></Title>
+                    </Toolbar>
+                </headerToolbar>
+                <StandardListItem id="_IDGenStandardListItem" press="press" type="Active" title="{name}" />
+            </List>
+        </content>
+    </Page>
+</mvc:View>
