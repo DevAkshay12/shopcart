@@ -58,26 +58,58 @@ sap.ui.define([
 
                 for (let j = 0; j < cellsPerRow && (i + j) < aData.length; j++) {
                     const item = aData[i + j];
-                    const stateclass = item.state == "available" ? "Avalstate" : item.state == "notavailable" ? "notavalstate" : "Defaulstate";
+                    const stateclass = item.state === "available" ? "Avalstate" :
+                                       item.state === "notavailable" ? "notavalstate" : "Defaulstate";
                     const imageUrl = item.url || "img/placeholder.jpg";
-                    const oCell = new BlockLayoutCell({
+                
+                    const oCell = new sap.ui.layout.BlockLayoutCell({
                         content: [
-                            new VerticalLayout({
-                                content: [
-                                    new ObjectIdentifier({ title: item.name }),
-                                    new ObjectStatus({ text: item.state }).addStyleClass(stateclass),
-                                    new sap.m.Image({ src: imageUrl, width: "100%" }).addStyleClass("Image"),
-                                    new Button({ icon: "sap-icon://cart-3" })
+                            new sap.m.VBox({
+                                alignItems: "Center",
+                                justifyContent: "Center",
+                                items: [
+                                    new sap.m.HBox({
+                                        width: "100%",
+                                        justifyContent: "SpaceBetween", // Pushes items to opposite ends
+                                        alignItems: "Center",
+                                        items: [
+                                            new sap.m.VBox({
+                                                items: [
+                                                    new sap.m.ObjectIdentifier({ title: item.name }),
+                                                    new sap.m.ObjectStatus({ text: item.state }).addStyleClass(stateclass)
+                                                ]
+                                            }),
+                                            new sap.m.Button({
+                                                icon: "sap-icon://hint",
+                                                type: "Transparent",
+                                                press: (oEvent) => {
+                                                    debugger
+                                                    sap.m.MessageToast.show(`More info about ${item.name}`);
+                                                }
+                                            })
+                                        ]
+                                    }),
+                                    new sap.m.Image({
+                                        src: imageUrl,
+                                        width: "150px",
+                                        height: "150px",
+                                        densityAware: false,
+                                        decorative: false
+                                    }).addStyleClass("Image"),
+                                    new sap.m.Button({ icon: "sap-icon://cart-3" })
                                 ]
+                                
+                                
+                                
                             })
                         ]
                     });
-
+                
                     oRow.addContent(oCell);
                 }
-
                 oBlock.addContent(oRow);
+                
             }
-        }
+        },
     });
 });

@@ -1,7 +1,7 @@
 <mvc:View xmlns:layout="sap.ui.layout" controllerName="shopcart.controller.View2"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
-    <Page id="page1" title="Welcome to the Shopping Cart">
+    <Page id="page1" title="Welcome to the Shopping Cart" class="page1">
         <headerContent>
             <ToolbarSpacer id="_IDGenToolbarSpacer1" />
             <Button id="cart" icon="sap-icon://customer"></Button>

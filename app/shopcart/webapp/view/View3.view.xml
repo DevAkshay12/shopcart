@@ -2,10 +2,11 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page2" title="{i18n>title}">
-    <content>
-            <List id="productList" items="{dataModel>product}">
-                <StandardListItem id="_IDGenStandardListItem1" press="onprodpress" title="{dataModel>name}" description="{dataModel>price}" icon="{dataModel>image}" type="Active"/>
+        <content>
+            <List id="productList" items="{dataModel>/product}">
+                <StandardListItem id="_IDGenStandardListItem1" title="{dataModel>name}" description="{dataModel>price}" type="Active" press="onprodpress" />
             </List>
+
         </content>
     </Page>
 </mvc:View>
