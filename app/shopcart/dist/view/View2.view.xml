@@ -1,0 +1,23 @@
+<mvc:View xmlns:layout="sap.ui.layout" controllerName="shopcart.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page id="page1" title="Welcome to the Shopping Cart" class="page1">
+        <headerContent>
+            <ToolbarSpacer id="_IDGenToolbarSpacer1" />
+            <Button id="cart" icon="sap-icon://customer"></Button>
+            <ToolbarSpacer id="_IDGenToolbarSpacer2" />
+            <Button id="user" icon="sap-icon://cart"></Button>
+        </headerContent>
+
+        <ScrollContainer id="_IDGenScrollContainer" width="100%" height="100%" vertical="true">
+            <content>
+                <Carousel id="_IDGenCarousel" class="sapUiContentPadding" loop="true" pages="{/CarouselImages}" height="400px" width="100%">
+                    <Image id="_IDGenImage" src="{url}" width="100%" height="400px"/>
+                </Carousel>
+                <Text id="_IDGenText" text="PROMOTED ITEMS" class="head"></Text>
+                <layout:BlockLayout id="block" background="Dashboard" visible="true">
+                </layout:BlockLayout>
+            </content>
+        </ScrollContainer>
+    </Page>
+</mvc:View>

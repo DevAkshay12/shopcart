@@ -87,7 +87,7 @@ resources:
 - name: cross-container-service-1
   type: org.cloudfoundry.existing-service
   parameters:
-    service-name: shop-db
+    service-name: shopdb-db
   properties:
     the-service-name: ${service-name}
 - name: shopcart-destination-service

@@ -16,6 +16,7 @@
         supplier    : String;
         description : String;
          status      : String;
+         discount    : String;
     category : Association to Categories;
 
     images : Composition of many ProductImages on images.product = $self;

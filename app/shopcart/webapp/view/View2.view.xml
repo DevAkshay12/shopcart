@@ -14,7 +14,41 @@
                 <Carousel id="_IDGenCarousel" class="sapUiContentPadding" loop="true" pages="{/CarouselImages}" height="400px" width="100%">
                     <Image id="_IDGenImage" src="{url}" width="100%" height="400px"/>
                 </Carousel>
-                <layout:BlockLayout id="block" background="Dashboard" visible="true">
+                <Text id="_IDGenText" text="PROMOTED ITEMS" class="head"></Text>
+                <layout:BlockLayout id="block" background="Dashboard" visible="false" content="{path:'/productimg'}">
+                    <layout:content>
+                        <layout:BlockLayoutRow id="_IDGenBlockLayoutRow">
+                            <layout:BlockLayoutCell id="_IDGenBlockLayoutCell1" title="{name}">
+                                <Image id="_IDGenImage1" src="{url}"></Image>
+                                <Image id="_IDGenImage4"  src="{supplier}"></Image>
+                                <Text id="_IDGenText2" text="{price}"></Text>
+                                <Text id="_IDGenText3" text="{description}"></Text>
+                                <Text id="_IDGenText4" text="{state}"></Text>
+                                <Button id="_IDGenButton" press="press" text="deo"></Button>
+                            </layout:BlockLayoutCell>
+                        </layout:BlockLayoutRow>
+                    </layout:content>
+                </layout:BlockLayout>
+                <layout:BlockLayout id="block2" background="Dashboard" visible="true" content="{path:'grouped>/grouped'}">
+                    <layout:content>
+                        <layout:BlockLayoutRow id="_IDGenBlockLayoutRow1" class="productRow">
+                            <layout:BlockLayoutCell  id="_IDGenBlockLayoutCell2" title="{grouped>first/name}">
+                                <Image id="_IDGenImage2" densityAware="false" src="{grouped>first/url}" height="80%" width="50%" class="Image"></Image>
+                                <Button id="_IDGenButton4" icon="sap-icon://information" class="info" press="press"></Button>
+                                <Button id="_IDGenButton1" press="press" icon="sap-icon://cart" class="cart"></Button>
+                                <VBox id="_IDGenVBox" visible="false">
+                                <Text id="_IDGenText5"  text="{grouped>first/price}"></Text>
+                                <Text id="_IDGenText6"  text="{grouped>first/description}"></Text>
+                                <Text id="_IDGenText7"  text="{grouped>first/state}"></Text>
+                                </VBox>
+                            </layout:BlockLayoutCell>
+                            <layout:BlockLayoutCell id="_IDGenBlockLayoutCell3" visible="{= !!${grouped>second/name} }" title="{grouped>second/name}">
+                                <Image id="_IDGenImage3" src="{grouped>second/url}" height="80%" width="50%" class="Image"></Image>
+                                <Button id="_IDGenButton5" icon="sap-icon://information" class="info" press="press"></Button>
+                                <Button id="_IDGenButton2" press="press" icon="sap-icon://cart" class ="cart"></Button>
+                            </layout:BlockLayoutCell>
+                        </layout:BlockLayoutRow>
+                    </layout:content>
                 </layout:BlockLayout>
             </content>
         </ScrollContainer>

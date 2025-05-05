@@ -1,0 +1,215 @@
+.Image {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+  max-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.Image:hover {
+  transform: scale(1.5);
+  z-index: 0;
+  /* Send it behind text */
+}
+
+
+
+.Avalstate * {
+  color: rgb(11, 235, 82) !important;
+}
+
+.notavalstate * {
+  color: red !important;
+}
+
+.hint {
+  padding-left: 90px;
+}
+
+
+
+
+/* Flip animation */
+.flip {
+  transform: rotateY(180deg);
+  transition: transform 0.6s ease-in-out;
+}
+
+.no-flip {
+  transform: rotateY(180deg);
+  transition: transform 0.6s;
+}
+
+.unflip {
+  transform: rotateY(0deg);
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.cardtext {
+  font-size: 1.1rem;
+  color: #333; /* Darker, sophisticated grey */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+  text-align: center;
+  margin: 8px 0; /* Slightly increased margin for better spacing */
+  line-height: 1.6; /* Improved readability */
+  letter-spacing: 0.01em; /* Subtle refinement */
+}
+
+.cardprice {
+  font-size: 1.4rem;
+  font-weight: 600; /* Semi-bold for a more contemporary feel */
+  color: #1e8449; /* Modern, slightly muted green */
+  text-align: center;
+  margin: 6px 0;
+}
+
+.cardsupplier {
+  font-size: 0.9rem;
+  font-style: normal; /* Less emphasis, more modern */
+  color: #777; /* Lighter grey */
+  text-align: center;
+  margin-top: 6px;
+  opacity: 0.8; /* Subtle visual hierarchy */
+}
+
+.spacer
+{
+  padding-top: 5px !important;
+}
+
+/* css for the cart button */
+
+.cart .sapMBtnInner {
+  background-color: white !important;
+  border: 2px solid #007aff !important;
+  border-radius: 50% !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 38px;
+  height: 38px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important; /* Remove default padding */
+  margin: 0 !important;
+}
+
+.cart .sapMBtnIcon {
+  color: #007aff !important;
+  font-size: 1.4rem !important;
+  margin-left: -2px; /* Adjust this to shift left */
+  transition: all 0.3s ease;
+}
+
+.cart:hover .sapMBtnIcon {
+  margin-left: -3px !important;
+}
+
+.cart:hover .sapMBtnIcon {
+  margin-left: -3px !important;
+  transform: scale(1.3);
+  text-shadow: 0 0 4px rgba(0, 122, 255, 0.4);
+}
+
+
+
+
+/* css for the hint button */
+
+.hintBtn .sapMBtnInner {
+  background-color: #f0f4ff !important;
+  border: 2px solid #3399ff !important;
+  border-radius: 4px !important; /* Slightly rounded corners */
+  width: 26px; /* Adjusted width */
+  height: 26px; /* Adjusted height */
+  padding: 0 !important; /* Ensure no extra padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hintBtn .sapMBtnIcon {
+  color: #3399ff !important;
+  font-size: 1.2rem; /* Adjusted icon size */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.hintBtn:hover .sapMBtnInner {
+  background-color: #3399ff !important;
+}
+
+.hintBtn:hover .sapMBtnIcon {
+  color: white !important;
+  transform: scale(1.1);
+}
+
+.head {
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1565c0;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+
+  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  border-top: 2px solid #2196f3;
+  border-bottom: 2px solid #2196f3;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Reduce the width by setting a fixed value */
+  width: 96%;  /* Adjust this value as needed to make it shorter */
+  max-width: 1050px; /* You can add a max-width to limit the width */
+  margin-left: auto;
+  margin-right: auto; /* Center the element horizontally */
+
+  box-sizing: border-box;
+
+  transition: all 0.3s ease;
+}
+
+.head:hover {
+  color: #0d47a1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.disc {
+  display: inline-block; /* Allows for inline styling like background color and padding */
+  font-size: 0.85rem; /* Slightly smaller to differentiate from main text */
+  color: #fff; /* White text for contrast */
+  background-color: #f44336; /* A vibrant, attention-grabbing red */
+  padding: 4px 8px; /* Comfortable padding */
+  border-radius: 4px; /* Slightly rounded corners for a modern touch */
+  font-weight: bold; /* To make it stand out */
+  margin-top: 4px; /* Space it out from the description */
+  margin-bottom: 8px; /* Space below for the icon */
+  animation: blinker 1s linear infinite; /* Apply the blink animation */
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+

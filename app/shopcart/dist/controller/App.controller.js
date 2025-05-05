@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel"],(e,o)=>{"use strict";return e.extend("shopcart.controller.App",{onInit(){var e;e=new o({busy:false,delay:0,layout:"TwoColumnsMidExpanded",smallScreenMode:true});this.getView().setModel(e,"appView")}})});
+//# sourceMappingURL=App.controller.js.map

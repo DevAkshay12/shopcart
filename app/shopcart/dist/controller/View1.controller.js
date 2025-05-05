@@ -1,0 +1,2 @@
+sap.ui.define(["sap/ui/core/mvc/Controller"],e=>{"use strict";return e.extend("shopcart.controller.View1",{onInit(){},item:function(e){debugger;const t=e.mParameters.listItem.mProperties.title;var o=this.getOwnerComponent().getRouter();o.navTo("RouteView3",{categoryName:encodeURIComponent(t)})}})});
+//# sourceMappingURL=View1.controller.js.map

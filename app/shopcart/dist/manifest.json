@@ -1,0 +1,166 @@
+{
+    "_version": "1.65.0",
+    "sap.app": {
+        "id": "shopcart",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.17.3",
+            "toolsId": "1199c964-eac7-41df-9828-7d2b999e119e"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "odata/v4/shop/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "odataVersion": "4.0"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "shopcart-display": {
+                    "semanticObject": "shopcart",
+                    "action": "display",
+                    "title": "{{shopcart-display.flpTitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.134.1",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "shopcart.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "operationMode": "Server",
+                    "autoExpandSelect": true,
+                    "earlyRequests": true
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "type": "View",
+                "viewType": "XML",
+                "path": "shopcart.view",
+                "controlId": "layout",
+                "controlAggregation": "midColumnPages",
+                "bypassed": {
+                    "target": [
+                        "Targetview1"
+                    ]
+                }
+            },
+            "routes": [
+                {
+                    "name": "RouteView1",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetView1",
+                        "TargetView2"
+                    ]
+                },
+                {
+                    "name": "RouteView2",
+                    "pattern": "view2",
+                    "target": [
+                        "TargetView3",
+                        "TargetView2"
+                    ]
+                },
+                {
+                    "name": "RouteView3",
+                    "pattern": "view3/{categoryName}",
+                    "target": [
+                        "Targetview3"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "id": "View1",
+                    "name": "View1",
+                    "transition": "flip",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "TargetView2": {
+                    "id": "View2",
+                    "name": "View2",
+                    "transition": "flip",
+                    "controlAggregation": "midColumnPages"
+                },
+                "Targetview3": {
+                    "id": "View3",
+                    "name": "View3",
+                    "transition": "flip",
+                    "controlAggregation": "beginColumnPages"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "shopcart.view.App",
+            "type": "XML",
+            "id": "App",
+            "async": true
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "shopcart"
+    }
+}
