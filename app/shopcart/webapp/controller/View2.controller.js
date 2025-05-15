@@ -84,20 +84,59 @@ sap.ui.define([
             }
 
         },
-
         press: function (oEvent) {
-            debugger
+            debugger;
             var content = oEvent.getSource().getParent().getContent();
-            var box = content[3].getVisible();
-            if(box == false)
-            {
-                content[0].setVisible(false);
-                content[3].setVisible(true);
-            }
-            else {
-                content[0].setVisible(true);
-                content[3].setVisible(false);
+            var image = content[0];  // Image
+            var textBlock = content[3]; // VBox (Text content)
+            textBlock.addStyleClass("cardTextBox");
+            textBlock.getItems()[0].addStyleClass("text")
+            textBlock.getItems()[1].addStyleClass("text")
+            textBlock.getItems()[2].addStyleClass("text")
+            var isTextVisible = textBlock.getVisible();
+        
+            if (!isTextVisible) {
+                // First Click: Show text (VBox), hide image
+                image.setVisible(false);
+               
+        
+                // Add flip class to text (simulate card flip)
+                textBlock.addStyleClass("flip");
+
+        
+                // Slide out image
+                setTimeout(() => {
+                    image.addStyleClass("slide-text-out");
+                   
+                }, 300);
+              
+        
+                // Remove animation class
+                setTimeout(() => {
+                    textBlock.removeStyleClass("flip");
+                    textBlock.setVisible(true);
+                }, 300);
+                
+            } else {
+                // Second Click: Show image, hide text (VBox)
+                image.setVisible(true);
+                textBlock.setVisible(false);
+        
+                // Add reverse flip to image
+                image.addStyleClass("flip-reverse");
+        
+                // Slide image in
+                setTimeout(() => {
+                    textBlock.addStyleClass("slide-image-in");
+                }, 300);
+        
+                setTimeout(() => {
+                    image.removeStyleClass("flip-reverse");
+                }, 600);
             }
         }
-    });
+        
+        
+        
+    })        
 });

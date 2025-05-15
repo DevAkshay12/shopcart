@@ -24,6 +24,7 @@
                                 <Text id="_IDGenText2" text="{price}"></Text>
                                 <Text id="_IDGenText3" text="{description}"></Text>
                                 <Text id="_IDGenText4" text="{state}"></Text>
+                                <Text id="_IDGenText55" text="{discount}"></Text>
                                 <Button id="_IDGenButton" press="press" text="deo"></Button>
                             </layout:BlockLayoutCell>
                         </layout:BlockLayoutRow>
@@ -40,12 +41,19 @@
                                 <Text id="_IDGenText5"  text="{grouped>first/price}"></Text>
                                 <Text id="_IDGenText6"  text="{grouped>first/description}"></Text>
                                 <Text id="_IDGenText7"  text="{grouped>first/state}"></Text>
+                                <Text id="_IDGenText8"  text="{grouped>first/discount}"></Text>
                                 </VBox>
                             </layout:BlockLayoutCell>
                             <layout:BlockLayoutCell id="_IDGenBlockLayoutCell3" visible="{= !!${grouped>second/name} }" title="{grouped>second/name}">
                                 <Image id="_IDGenImage3" src="{grouped>second/url}" height="80%" width="50%" class="Image"></Image>
                                 <Button id="_IDGenButton5" icon="sap-icon://information" class="info" press="press"></Button>
                                 <Button id="_IDGenButton2" press="press" icon="sap-icon://cart" class ="cart"></Button>
+                                 <VBox id="_IDGenVBox1" visible="false">
+                                <Text id="_IDGenText52" class="text1" text="{grouped>second/price}"></Text>
+                                <Text id="_IDGenText63" class="text1"  text="{grouped>second/description}"></Text>
+                                <Text id="_IDGenText74" class="text2" text="{grouped>second/state}"></Text>
+                                <Text id="_IDGenText75" class="text2" text="{grouped>second/discount}"></Text>
+                                </VBox>
                             </layout:BlockLayoutCell>
                         </layout:BlockLayoutRow>
                     </layout:content>
